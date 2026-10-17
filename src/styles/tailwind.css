@@ -1,144 +1,169 @@
-@import "tailwindcss";
-@source "./src";
+@import 'tailwindcss';
+
+@source "../../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
 
 @theme {
+    /* Colors */
+    --color-primary: #; /* primary color */
+    --color-secondary: #; /* secondary color */
+    --color-tertiary: #; /* tertiary color */
 
-	/* Fonts */
-	--font-inter: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    --color-text-primary: #; /* primary text color */
+    --color-text-secondary: #; /* secondary text color */
+    --color-text-tertiary: #; /* tertiary text color */
 
-	/* Colors */
-	--color-yellow-1000: #FDF3E2;
-	--color-yellow-1100: #F2AC3C;
-	--color-yellow-1200: #926114;
+    --color-border: #d8e0dd; /* border color */
+    --color-background: #f6f8f7; /* background color */
 
-	--color-gray-50:  #fafafa;
-	--color-gray-200: #e9e9e9;
-	--color-gray-400: #b5b5b5;
-	--color-gray-600: #717171;
-	--color-gray-700: #727272;
-	--color-gray-900: #212121;
-	--color-gray-1000:#D9D9D9;
+    /* Shadows for commonly use components*/
+    --shadow-card: 0px 2px 1px 0px #0000000d;
+    --shadow-button: 0px 1px 0px 0px rgba(0 0 0 / 0.05);
 
-	--color-cyan-1000:#3BB6AC;
-	--color-cyan-1100:#449891;
+    /* Radius configurations */
+    --radius-4xl: 30px;
+    --radius-4-5xl: 32px;
 
-	--color-blue-1000:#2463BC;
-	--color-blue-1100:#3B82F6;
+    /* Type: the smallest sizes are raised for readability (13px floor) */
+    --text-xs: 13px;
+    --text-xs--line-height: 18px;
+    --text-sm: 15px;
+    --text-sm--line-height: 22px;
 
-	--color-red-1000: #D82C0D;
-
-	--color-open-border: #B6B6B6;
-	--color-interactive: #2463BC;
-
-	/* Shadows for commonly use components*/
-	--shadow-card: 0px 2px 1px 0px #0000000d;
-	--shadow-button: 0px 1px 0px 0px rgba(0 0 0 / .05);
-
-	/* Radius configurations */
-	--radius-4xl: 30px;
-	--radius-4-5xl: 32px;
-
-	/* Spacing scale configurations */
-	--spacing-800: 800px;
-	--spacing-50: 196px;
-
+    /* Spacing scale configurations */
+    --spacing-800: 800px;
+    --spacing-50: 196px;
 }
 
-/* Font sizes with line height */ 
+/* Headings use Rubik (loaded in app/layout.tsx), body text stays Inter. */
+@utility font-display {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.01em;
+}
+
+@layer base {
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: -0.01em;
+    }
+}
+
+/* Font sizes with line height */
 
 @utility text-heading4Xl {
-  font-size: 36px;
-  line-height: 44px;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 @utility text-heading3Xl {
-  font-size: 32px;
-  line-height: 40px;
+    font-size: 32px;
+    line-height: 40px;
 }
 
 @utility text-heading2Xl {
-  font-size: 28px;
-  line-height: 32px;
+    font-size: 28px;
+    line-height: 34px;
 }
 
 @utility text-headingXl {
-  font-size: 24px;
-  line-height: 28px;
+    font-size: 24px;
+    line-height: 30px;
 }
 
 @utility text-headingLg {
-  font-size: 20px;
-  line-height: 24px;
+    font-size: 20px;
+    line-height: 26px;
 }
 
 @utility text-headingMd {
-  font-size: 16px;
-  line-height: 20px;
+    font-size: 17px;
+    line-height: 22px;
 }
 
 @utility text-headingSm {
-  font-size: 14px;
-  line-height: 16px;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 @utility text-headingXs {
-  font-size: 12px;
-  line-height: 16px;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 @utility text-bodyLg {
-  font-size: 16px;
-  line-height: 24px;
+    font-size: 17px;
+    line-height: 26px;
 }
 
 @utility text-bodyMd {
-  font-size: 14px;
-  line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 @utility text-bodySm {
-  font-size: 12px;
-  line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 @utility text-bodyXs {
-  font-size: 11px;
-  line-height: 14px;
+    font-size: 13px;
+    line-height: 18px;
 }
 
+/* Extra max-width variants. The standard sm/md/lg/xl variants are Tailwind's
+   own (min-width, mobile first); do not redefine them. */
 
-/* Custom variants for your max-width breakpoints */
-
-@custom-variant lg (@media (width <= 1500px));
 @custom-variant wrap (@media (width <= 1260px));
-@custom-variant md (@media (width <= 1050px));
 @custom-variant wrapSmall (@media (width <= 950px));
 @custom-variant smd (@media (width <= 800px));
 @custom-variant mmd (@media (width <= 700px));
-@custom-variant sm (@media (width <= 550px));
 @custom-variant xs (@media (width <= 450px));
 
 /* Transition-property: width */
 @utility transition-width {
-	transition-property: width;
+    transition-property: width;
 }
 
 /* 1.5px border helper  */
-@utility border-1_5 { 
-	border-width: 1.5px;
+@utility border-1_5 {
+    border-width: 1.5px;
 }
 
 /* Keyframes + animations — generates `animate-show` / `animate-hide` */
 @theme {
-	--animate-show: show .3s ease-out forwards;
-	--animate-hide: hide .3s ease-in forwards;
+    --animate-show: show 0.3s ease-out forwards;
+    --animate-hide: hide 0.3s ease-in forwards;
+    --animate-grow-bar: grow-bar 1.5s ease-out forwards;
+    --animate-typewriter: typewriter-reveal 2.5s steps(40, end) forwards;
 
-	@keyframes show {
-		0%   { opacity: 0; transform: scale(0.95) }
-		100% { opacity: 1; transform: scale(1) }
-	}
-	@keyframes hide {
-		0%   { opacity: 1; transform: scale(1) }
-		100% { opacity: 0; transform: scale(0.95) }
-	}
+    @keyframes show {
+        0% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    @keyframes hide {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+    }
+    @keyframes grow-bar {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    }
 }
