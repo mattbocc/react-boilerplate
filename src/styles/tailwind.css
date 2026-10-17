@@ -14,7 +14,7 @@
     --color-text-tertiary: #; /* tertiary text color */
 
     --color-border: #d8e0dd; /* border color */
-    --color-background: #f6f8f7; /* background color */
+    --color-background: #fafafa; /* background color */
 
     /* Shadows for commonly use components*/
     --shadow-card: 0px 2px 1px 0px #0000000d;
@@ -112,13 +112,15 @@
     line-height: 18px;
 }
 
-/* Extra max-width variants. The standard sm/md/lg/xl variants are Tailwind's
-   own (min-width, mobile first); do not redefine them. */
+/* Custom max-width breakpoints */
 
+@custom-variant lg (@media (width <= 1500px));
 @custom-variant wrap (@media (width <= 1260px));
+@custom-variant md (@media (width <= 1050px));
 @custom-variant wrapSmall (@media (width <= 950px));
 @custom-variant smd (@media (width <= 800px));
 @custom-variant mmd (@media (width <= 700px));
+@custom-variant sm (@media (width <= 550px));
 @custom-variant xs (@media (width <= 450px));
 
 /* Transition-property: width */
