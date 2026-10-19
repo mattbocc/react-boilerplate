@@ -4,17 +4,29 @@
 @source "../**/*.{js,ts,jsx,tsx,mdx}";
 
 @theme {
-    /* Colors */
-    --color-primary: #; /* primary color */
-    --color-secondary: #; /* secondary color */
-    --color-tertiary: #; /* tertiary color */
+    /* Main Colors */
+    --color-primary: #02111b; /* deep midnight navy */
+    --color-secondary: #5d737e; /* muted slate blue */
+    --color-tertiary: #30292f; /* dark charcoal plum */
 
-    --color-text-primary: #; /* primary text color */
-    --color-text-secondary: #; /* secondary text color */
-    --color-text-tertiary: #; /* tertiary text color */
+    /* Subsection colours derived from Slate Blue */
+    --color-subsection-1: #e9eff2; /* very light slate blue */
+    --color-subsection-2: #d2dfe5; /* light slate blue */
+    --color-subsection-3: #abc0cb; /* soft slate blue */
+    --color-subsection-4: #819ead; /* medium slate blue */
+    --color-subsection-5: #5d737e; /* original slate blue */
 
-    --color-border: #d8e0dd; /* border color */
-    --color-background: #fafafa; /* background color */
+    /* Text Colors */
+    --color-text-primary: #02111b; /* deep navy, high readability */
+    --color-text-secondary: #5d737e; /* muted slate blue */
+
+    /* Borders and Background */
+    --color-border: #d5dee3; /* soft blue-grey */
+    --color-background: #f4f6f7; /* subtle cool off-white */
+
+    /* Interactive Colors */
+    --color-open-border: #a8b5bc; /* neutral slate-grey */
+    --color-interactive: #3f6578; /* deeper slate blue */
 
     /* Shadows for commonly use components*/
     --shadow-card: 0px 2px 1px 0px #0000000d;
